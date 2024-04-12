@@ -1,23 +1,27 @@
-import { getAuth, signInWithRedirect, GoogleAuthProvider } from "firebase/auth";
+import { signInWithRedirect, GoogleAuthProvider } from "firebase/auth";
 
-const sign_in = () => {
-    const provider = new GoogleAuthProvider();
-
-    const auth = getAuth();
-    signInWithRedirect(auth, provider);
-}
-
+import { auth } from "./lib/firebase";
 
 function App() {
+    const sign_in = (e) => {
+        e.preventDefault();
+
+        const provider = new GoogleAuthProvider();
+
+        signInWithRedirect(auth, provider);
+    };
+
     return (
         <div>
-            <form onSubmit={sign_in}>
+            <form>
                 <input type="text" placeholder="Email" />
                 <br />
                 <input type="password" placeholder="Password" />
 
                 <br />
                 <button type="submit">Login</button>
+
+                <button onClick={sign_in}>Sign in with Google</button>
             </form>
         </div>
     );
