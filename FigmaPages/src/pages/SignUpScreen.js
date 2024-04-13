@@ -46,7 +46,9 @@ const SignUpScreen = () => {
 
         console.log(errorMessage, errorCode, email, credential);
       });
-    navigate("/PostHomePage");
+    if (error == "") {
+      navigate("/PostHomePage");
+    }
   }, [naviate]);
 
   const onHaveAnAccountLoginClick = useCallback(() => {

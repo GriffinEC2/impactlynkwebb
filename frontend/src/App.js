@@ -94,8 +94,6 @@ function App() {
             });
     }
 
-    onChange={(e) => setUsername(e.target.value)}
-
     return (
         <div>
             <form onSubmit={handleSignUp}>
