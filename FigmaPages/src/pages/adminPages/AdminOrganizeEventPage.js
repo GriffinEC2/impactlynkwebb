@@ -1,7 +1,7 @@
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import TopBar2 from "../components/TopBar";
-import TypeDoubleThemeLight from "../components/TypeDoubleThemeLight";
+import TypeDoubleThemeLight from "../../components/TypeDoubleThemeLight";
 import Button from "../components/Button";
 
 const AdminOrganizeEventPage2 = () => {
