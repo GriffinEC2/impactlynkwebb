@@ -7,6 +7,8 @@ import {
 } from "firebase/auth";
 
 import app from "./lib/firebase";
+import { useState } from "react";
+
 
 function App() {
     const signInWithGoogle = (e) => {
@@ -40,6 +42,7 @@ function App() {
                 console.log(errorMessage, errorCode, email, credential);
             });
     };
+    
 
     const signOutHandler = () => {
         signOut(getAuth(app)).then(() => {
@@ -47,42 +50,73 @@ function App() {
         });
     };
 
-    const SignIn = (e) => {
+    // const [email, setEmail] = useState("");
+    // const [password, setPassword] = useState("");
+
+    // const SignIn = (e) => {
+    //     e.preventDefault();
+
+    //     const auth = getAuth();
+
+    //     createUserWithEmailAndPassword(auth, email, password)
+    //         .then((userCredential) => {
+    //             // Signed up
+    //             const user = userCredential.user;
+    //             console.log(user);
+    //         })
+    //         .catch((error) => {
+    //             const errorCode = error.code;
+    //             const errorMessage = error.message;
+
+    //             console.log(errorMessage, errorCode);
+    //         });
+    // };
+
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [username, setUsername] = useState("");
+    const [error, setError] = useState("");
+
+    function handleSignUp(e) {
         e.preventDefault();
 
-        // const auth = getAuth();
+        const auth = getAuth();
 
-        // createUserWithEmailAndPassword(auth, email, password)
-        //     .then((userCredential) => {
-        //         // Signed up
-        //         const user = userCredential.user;
-        //         console.log(user);
-        //     })
-        //     .catch((error) => {
-        //         const errorCode = error.code;
-        //         const errorMessage = error.message;
-
-        //         console.log(errorMessage, errorCode);
-        //     });
-    };
+        createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                const user = userCredential.user;
+                console.log(user);
+                setError("");
+            })
+            .catch((error) => {
+                const errorMessage = error.message;
+                setError(errorMessage);
+            });
+    }
 
     return (
         <div>
-            <form onSubmit={SignIn}>
+            <form onSubmit={handleSignUp}>
+                <input
+                    type="text"
+                    placeholder="Username"
+                    onChange={(e) => setUsername(e.target.value)}
+                />
+                <br />
                 <input
                     type="text"
                     placeholder="Email"
-                    // onChange={(e) => setEmail(e.target.value)}
+                    onChange={(e) => setEmail(e.target.value)}
                 />
                 <br />
                 <input
                     type="password"
                     placeholder="Password"
-                    // onChange={(e) => setPassword(e.target.value)}
+                    onChange={(e) => setPassword(e.target.value)}
                 />
 
                 <br />
-                <button type="submit">Login</button>
+                <button type="sign up">Login</button>
             </form>
             <button onClick={signInWithGoogle}>Sign in with Google</button>
             <button onClick={signOutHandler}>Sign Out</button>
