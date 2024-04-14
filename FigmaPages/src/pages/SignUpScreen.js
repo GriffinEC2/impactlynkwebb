@@ -15,7 +15,7 @@ import app from "../lib/firebase";
 const SignUpScreen = () => {
   const navigate = useNavigate();
 
-  const [error1, setError] = useState("");
+  const [error1, setError] = useState(null);
 
   const onGoogleButtonFrameClick = useCallback((e) => {
     e.preventDefault();
@@ -51,7 +51,7 @@ const SignUpScreen = () => {
       });
 
 
-  }, [navigate]);
+  }, [setError]);
 
   useEffect(() => {
     if (error1 === "0") {
@@ -59,16 +59,16 @@ const SignUpScreen = () => {
       console.log("Routing to Post Home Page")
     }
     console.log("error1:", error1)
-  }, [setError]);
+  }, [error1]);
 
 
 
   const onHaveAnAccountLoginClick = useCallback(() => {
-    navigate("/login-screen");
+    // navigate("/login-screen");
   }, [navigate]);
 
   const onAlreadyHaveAnClick = useCallback(() => {
-    navigate("/login-screen");
+    // navigate("/login-screen");
   }, [navigate]);
 
   const onLogoClick = useCallback(() => {

@@ -39,19 +39,19 @@ const Property1Default1 = ({
         </div>
       </button>
       <div className="overflow-hidden flex flex-row items-center justify-center gap-[1px]">
-        <button className="cursor-pointer [border:none] py-0 px-[30px] bg-[transparent] rounded-61xl shadow-[0px_4px_10px_rgba(0,_0,_0,_0.25)] overflow-hidden flex flex-row items-center justify-center">
+        <button className="cursor-pointer [border:none] py-0 px-[30px] bg-[transparent] rounded-61xl overflow-hidden flex flex-row items-center justify-center">
           <div className="relative text-xl font-poppins text-white text-left">
             Sign in
           </div>
         </button>
         <div className="w-px relative box-border h-[65px] border-r-[1px] border-solid border-gray-600" />
-        <button className="cursor-pointer [border:none] py-0 px-[30px] bg-[transparent] rounded-61xl shadow-[0px_4px_10px_rgba(0,_0,_0,_0.25)] overflow-hidden flex flex-row items-center justify-center">
+        <button className="cursor-pointer [border:none] py-0 px-[30px] bg-[transparent] rounded-61xl overflow-hidden flex flex-row items-center justify-center">
           <div className="relative text-xl font-poppins text-white text-left">
             Volunteer
           </div>
         </button>
         <div className="w-px relative box-border h-[65px] border-r-[1px] border-solid border-gray-600" />
-        <button className="cursor-pointer [border:none] py-0 px-[30px] bg-[transparent] rounded-61xl shadow-[0px_4px_10px_rgba(0,_0,_0,_0.25)] overflow-hidden flex flex-row items-center justify-center">
+        <button className="cursor-pointer [border:none] py-0 px-[30px] bg-[transparent] rounded-61xl overflow-hidden flex flex-row items-center justify-center">
           <div className="relative text-xl font-poppins text-white text-left">
             About Us
           </div>

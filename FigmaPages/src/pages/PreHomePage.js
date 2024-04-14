@@ -39,7 +39,7 @@ const PreHomePage = () => {
       <Property1Default1
         property1DefaultWidth="1286px"
         property1DefaultHeight="106px"
-        property1DefaultBorder="3px solid #a97d4e"
+        // property1DefaultBorder="3px solid #a97d4e"
         impactLynkFontWeight="unset"
       />
       <div className="w-[1280px] relative h-[2382px]">

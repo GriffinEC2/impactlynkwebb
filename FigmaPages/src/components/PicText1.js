@@ -192,7 +192,7 @@ const PicText11 = ({
           arrow1="/arrow-1.svg"
           volunteer="Volunteer"
           propColor="#666"
-          onVolunteerButtonClick={onVolunteerButton2Click}
+          onVolunteerButtonClick={onVolunteerButtonClick}
         />
       </div>
       <img
