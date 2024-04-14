@@ -48,7 +48,7 @@ const LoginScreen = () => {
           forgetYourPassword="Forget your password?"
           logIn="Log in"
           dontHaveAnAcount="Don’t have an acount? "
-          signUp="Sign up  "
+          signUp="Sign up"
           showFrameArticle
           passwordHideSee={false}
           showTextField

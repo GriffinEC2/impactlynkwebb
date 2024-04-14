@@ -2,7 +2,7 @@ import { useCallback } from "react";
 import TopBar from "../components/TopBar";
 import Login1 from "../components/Login1";
 import ContactScreen from "../components/ContactScreen";
-import Login from "../components/Login";
+import Login from "../components/Login2";
 
 const OrgOrganizeEventPage2 = () => {
   const onFrameContainerClick = useCallback(() => {

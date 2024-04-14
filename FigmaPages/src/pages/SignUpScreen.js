@@ -1,55 +1,14 @@
-import { useCallback, useState } from "react";
+import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import SignUp from "../components/SignUp";
 import HeadingTextBackgroundLo from "../components/HeadingTextBackgroundLo";
 
-import {
-  signInWithPopup,
-  getAuth,
-  GoogleAuthProvider,
-  createUserWithEmailAndPassword,
-  signOut
-} from "firebase/auth";
-
-import app from "./lib/firebase";
-
 const SignUpScreen = () => {
   const navigate = useNavigate();
 
-  const onGoogleButtonFrameClick = useCallback((e) => {
+  const onGoogleButtonFrameClick = useCallback(() => {
     //TODO: Google Sign in thing then send to post home page
-    e.preventDefault();
-
-    const provider = new GoogleAuthProvider();
-
-    signInWithPopup(getAuth(app), provider)
-      .then((result) => {
-        // This gives you a Google Access Token. You can use it to access the Google API.
-        const credential =
-          GoogleAuthProvider.credentialFromResult(result);
-        const token = credential.accessToken;
-        // The signed-in user info.
-        const user = result.user;
-        // IdP data available using getAdditionalUserInfo(result)
-        // ...
-
-        console.log(user, token, credential);
-      })
-      .catch((error) => {
-        // Handle Errors here.
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        // The email of the user's account used.
-        const email = error.customData.email;
-        // The AuthCredential type that was used.
-        const credential = GoogleAuthProvider.credentialFromError(error);
-
-        console.log(errorMessage, errorCode, email, credential);
-      });
-    if (error == "") {
-      navigate("/PostHomePage");
-    }
-  }, [naviate]);
+  }, []);
 
   const onHaveAnAccountLoginClick = useCallback(() => {
     navigate("/login-screen");

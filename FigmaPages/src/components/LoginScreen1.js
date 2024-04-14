@@ -478,6 +478,8 @@ const LoginScreen1 = ({
       left: textFieldLeft,
       borderRadius: textFieldBorderRadius,
       overflow: textFieldOverflow,
+      fontFamily: 'Inter',
+      fontSize: 20
     };
   }, [
     textFieldBorder,
@@ -960,7 +962,9 @@ const LoginScreen1 = ({
                 style={label2Style}
               >
                 {label}
+
               </div>
+
               {!passwordHideSee && (
                 <div
                   className="absolute top-[0px] right-[8.9px] w-[73px] h-[27px] hidden text-right text-lg text-dimgray-400"
@@ -983,11 +987,13 @@ const LoginScreen1 = ({
             </article>
           )}
           {showTextField && (
-            <input
-              className="[outline:none] bg-[transparent] absolute h-[64.37%] w-full top-[35.63%] right-[0%] bottom-[0%] left-[0%] rounded-xl box-border overflow-hidden border-[1px] border-solid border-dimgray-500"
-              type="text"
-              style={textField2Style}
-            />
+            <div>
+              <input
+                className="[outline:none] bg-[transparent] absolute h-[64.37%] w-full top-[35.63%] right-[0%] bottom-[0%] left-[0%] rounded-xl box-border overflow-hidden border-[1px] border-solid border-dimgray-500"
+                type="text"
+                style={textField2Style}
+              />
+            </div>
           )}
           {!errorMessage1 && (
             <div
