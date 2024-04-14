@@ -467,7 +467,7 @@ const LoginScreen1 = ({
 
   const textField2Style = useMemo(() => {
     return {
-      border: textFieldBorder,
+      // border: textFieldBorder,
       outline: textFieldOutline,
       backgroundColor: textFieldBackgroundColor,
       height: textFieldHeight,
@@ -479,7 +479,8 @@ const LoginScreen1 = ({
       borderRadius: textFieldBorderRadius,
       overflow: textFieldOverflow,
       fontFamily: 'Inter',
-      fontSize: 20
+      fontSize: 20,
+      color: '#333',
     };
   }, [
     textFieldBorder,
@@ -696,6 +697,9 @@ const LoginScreen1 = ({
       color: textFieldColor,
       textAlign: textFieldTextAlign,
       display: textFieldDisplay,
+      fontFamily: 'Inter',
+      fontSize: 20,
+      color: '#333',
     };
   }, [
     textFieldBorder1,
@@ -1091,6 +1095,7 @@ const LoginScreen1 = ({
           </div>
         </button>
       )}
+      
       <button
         className="cursor-pointer [border:none] p-0 bg-[transparent] relative text-base text-left inline-block"
         style={alreadyHaveAnContainer2Style}
@@ -1111,6 +1116,22 @@ const LoginScreen1 = ({
           {signUp}
         </span>
       </button>
+
+      {showFrameButton && (
+        <button
+          className="cursor-pointer [border:none] p-0 bg-gray-200 w-[484px] relative rounded-13xl h-16 overflow-hidden shrink-0"
+          style={frameButtonStyle}
+          onClick={onFrameButtonClick}
+        >
+          <div
+            className="absolute top-[calc(50%_-_32px)] left-[calc(50%_-_242px)] text-3xl font-medium font-poppins text-dimgray-200 text-center flex items-center justify-center w-[484px] h-16"
+            style={logInStyle}
+            onClick={onFrameButton1Click}
+          >
+            Log in with Google
+          </div>
+        </button>
+      )}
     </div>
   );
 };
