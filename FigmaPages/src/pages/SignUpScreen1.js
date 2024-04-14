@@ -26,20 +26,21 @@ const SignUpScreen1 = () => {
           user2="/user@2x.png"
           label="School/Organization"
           label1="Phone Number"
+          password="Grade"
           hide="Error message"
-          signUp="By creating an account, you agree to the "
+          signUp="Continue"
           prop="Privacy Policy."
           areYouPlanning={false}
           boxes={false}
           showSignUpBoxes
-          showPassword={false}
-          passwordHideSee
+          showPassword
+          passwordHideSee={false}
           showHide={false}
-          showButton={false}
+          showButton
           icons1={false}
           byCreatingAnContainer
           showSpan={false}
-          buttonVisible={false}
+          buttonVisible
           icons2={false}
           signUpGap="10px"
           frameDivAlignSelf="unset"

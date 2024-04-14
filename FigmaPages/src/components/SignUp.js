@@ -1479,11 +1479,12 @@ const SignUp = ({
           <div className="w-[484px] relative h-[87px]">
             <article className="absolute h-[31.03%] w-full top-[0%] right-[0%] bottom-[68.97%] left-[0%] text-left text-base text-dimgray-200 font-poppins">
               <div className="absolute top-[0px] left-[0px]">
-                {showPassword && (
+                {/* {showPassword && (
                   <p className="m-0" style={passwordStyle}>
                     {password}
                   </p>
-                )}
+                )} */}
+                {password}
               </div>
               {!passwordHideSee && (
                 <div
@@ -1660,7 +1661,7 @@ const SignUp = ({
         className="m-0 w-[494px] relative text-inherit font-medium font-inherit text-center flex items-center justify-center"
         style={orStyle}
       >
-        {or}
+        {or} 
       </h1>
       <div
         className="w-[515px] overflow-hidden flex flex-col items-center justify-start"
