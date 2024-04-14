@@ -55,11 +55,32 @@ const SignUpScreen = () => {
 
   useEffect(() => {
     if (error1 === "0") {
-      navigate("/post-home-page");
-      console.log("Routing to Post Home Page")
+      navigate("/sign-up-screen-2");
+      console.log("Routing to Sign Up Screen 2")
     }
     console.log("error1:", error1)
   }, [error1]);
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("");
+
+  const handleSignUp = callback((e) => {
+    e.preventDefault();
+
+    const auth = getAuth();
+
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log(user);
+        setError("0");
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        setError(errorMessage);
+      });
+  })
 
 
 
