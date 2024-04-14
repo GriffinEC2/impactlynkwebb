@@ -381,6 +381,7 @@ const SignUp = ({
   alreadyHaveAnContainerColor,
   alreadyHaveAnColor,
   onButtonClick,
+  onButtonClick1,
   onByCreatingAnClick,
   onGoogleButtonFrameClick,
   onHaveAnAccountLoginClick,
@@ -1689,6 +1690,7 @@ const SignUp = ({
       <button
         className="cursor-pointer [border:none] p-0.5 bg-[transparent] flex flex-row items-start justify-start"
         style={haveAnAccountLoginStyle}
+        onClick={onButtonClick1}
       >
         <div
           className="relative text-base font-poppins text-left"
@@ -1698,7 +1700,7 @@ const SignUp = ({
             Already have an account?
           </span>
           <span className="text-dimgray-200">{` `}</span>
-          <span className="[text-decoration:underline] text-gray-200 whitespace-pre-wrap">{`Log in  `}</span>
+          <span className="[text-decoration:underline] text-gray-200 whitespace-pre-wrap">{`Log in`}</span>
         </div>
       </button>
     </div>

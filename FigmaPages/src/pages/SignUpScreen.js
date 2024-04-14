@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import { useCallback, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import SignUp from "../components/SignUp";
 import HeadingTextBackgroundLo from "../components/HeadingTextBackgroundLo";
@@ -10,12 +10,14 @@ import {
   signOut
 } from "firebase/auth";
 
-import app from "./lib/firebase";
+import app from "../lib/firebase";
 
 const SignUpScreen = () => {
   const navigate = useNavigate();
 
-  const signInWithGoogle = (e) => {
+  const [error1, setError] = useState("");
+
+  const onGoogleButtonFrameClick = useCallback((e) => {
     e.preventDefault();
 
     const provider = new GoogleAuthProvider();
@@ -30,6 +32,7 @@ const SignUpScreen = () => {
         const user = result.user;
         // IdP data available using getAdditionalUserInfo(result)
         // ...
+        setError("0");
 
         console.log(user, token, credential);
       })
@@ -42,10 +45,23 @@ const SignUpScreen = () => {
         // The AuthCredential type that was used.
         const credential =
           GoogleAuthProvider.credentialFromError(error);
+        setError("errorMessage")
 
         console.log(errorMessage, errorCode, email, credential);
       });
-  };
+
+
+  }, [navigate]);
+
+  useEffect(() => {
+    if (error1 === "0") {
+      navigate("/post-home-page");
+      console.log("Routing to Post Home Page")
+    }
+    console.log("error1:", error1)
+  }, [setError]);
+
+
 
   const onHaveAnAccountLoginClick = useCallback(() => {
     navigate("/login-screen");
@@ -412,6 +428,7 @@ const SignUpScreen = () => {
           onGoogleButtonFrameClick={onGoogleButtonFrameClick}
           onHaveAnAccountLoginClick={onHaveAnAccountLoginClick}
           onAlreadyHaveAnClick={onAlreadyHaveAnClick}
+          onButtonClick1={onAlreadyHaveAnClick}
           passwordHideSee1={false}
           showHide1
           errorMessage11={false}
