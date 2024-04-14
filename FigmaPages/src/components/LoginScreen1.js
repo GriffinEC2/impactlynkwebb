@@ -995,7 +995,7 @@ const LoginScreen1 = ({
               <input
                 className="[outline:none] bg-[transparent] absolute h-[64.37%] w-full top-[35.63%] right-[0%] bottom-[0%] left-[0%] rounded-xl box-border overflow-hidden border-[1px] border-solid border-dimgray-500"
                 type="text"
-                style={textField2Style}
+                style={{ ...textField2Style, zIndex:999 }}
               />
             </div>
           )}
@@ -1054,8 +1054,8 @@ const LoginScreen1 = ({
           <input
             className="[outline:none] bg-[transparent] absolute h-[64.37%] w-full top-[35.63%] right-[0%] bottom-[0%] left-[0%] rounded-xl box-border overflow-hidden border-[1px] border-solid border-dimgray-500"
             type="text"
-            style={textField3Style}
-          />
+            style={{ ...textField2Style, zIndex:999 }}
+            />
           {!errorMessage3 && (
             <div
               className="absolute top-[104.6%] left-[0%] hidden"

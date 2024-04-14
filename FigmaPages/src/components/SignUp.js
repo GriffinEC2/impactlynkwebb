@@ -1434,6 +1434,7 @@ const SignUp = ({
             <input
               className="[outline:none] bg-[transparent] absolute h-[64.37%] w-full top-[35.63%] right-[0%] bottom-[0%] left-[0%] rounded-xl box-border overflow-hidden border-[1px] border-solid border-dimgray-500"
               type="text"
+              style={{ zIndex:999 }}
             />
             <div className="absolute top-[104.6%] left-[0%] hidden">
               Error message
@@ -1457,6 +1458,7 @@ const SignUp = ({
             <input
               className="[outline:none] bg-[transparent] absolute h-[64.37%] w-full top-[35.63%] right-[0%] bottom-[0%] left-[0%] rounded-xl box-border overflow-hidden border-[1px] border-solid border-dimgray-500"
               type="text"
+              style={{ zIndex:999 }}
             />
             <div className="absolute top-[104.6%] left-[0%] hidden">
               Error message
@@ -1499,7 +1501,7 @@ const SignUp = ({
             <input
               className="[outline:none] bg-[transparent] absolute h-[64.37%] w-full top-[35.63%] right-[0%] bottom-[0%] left-[0%] rounded-xl box-border overflow-hidden border-[1px] border-solid border-dimgray-500"
               type="text"
-              style={textFieldStyle}
+              style={{ ...textFieldStyle,zIndex:999 }}
             />
             <div
               className="absolute top-[104.6%] left-[0%] hidden"
