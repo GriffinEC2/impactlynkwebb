@@ -2,11 +2,20 @@ import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import SignUp from "../components/SignUp";
 import HeadingTextBackgroundLo from "../components/HeadingTextBackgroundLo";
+import { addUserDetails } from "../lib/users";
+import UserContext from "../context/userContext"
+
 
 const SignUpScreen2 = () => {
   const navigate = useNavigate();
 
   const onButtonClick = useCallback(() => {
+    const {
+      LoginInfo,
+    } = useContext(UserContext)
+
+    addUserDetails(LoginInfo) // TODO: spread? and don't include email + pswd. Add uid
+
     navigate("/post-home-page");
   }, [navigate]);
 
