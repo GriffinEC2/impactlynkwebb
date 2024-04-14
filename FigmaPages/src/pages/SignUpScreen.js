@@ -61,11 +61,9 @@ const SignUpScreen = () => {
     console.log("error1:", error1)
   }, [error1]);
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [username, setUsername] = useState("");
+  
 
-  const handleSignUp = callback((e) => {
+  const handleSignUp = useCallback((e) => {
     e.preventDefault();
 
     const auth = getAuth();

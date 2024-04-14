@@ -1,4 +1,5 @@
-import { useMemo } from "react";
+import { useMemo, useContext } from "react";
+import UserContext from "../context/userContext"
 
 const SignUp = ({
   welcomeToImpactApp,
@@ -1353,6 +1354,12 @@ const SignUp = ({
     alreadyHaveAnContainerColor,
   ]);
 
+  const {
+    LoginInfo, 
+    LoginInfo: {userEmail, userPassword, userUsername}, 
+    setLoginInfo,
+  } = useContext(UserContext)
+
   return (
     <div
       className="max-w-full overflow-hidden flex flex-col items-start justify-start gap-[10px] text-left text-13xl text-darkslategray-300 font-poppins"
@@ -1432,10 +1439,11 @@ const SignUp = ({
                 <div className="absolute top-[0px] right-[0px]">Hide</div>
               </div>
             </article>
-            <input
+            <input // email
               className="[outline:none] bg-[transparent] absolute h-[64.37%] w-full top-[35.63%] right-[0%] bottom-[0%] left-[0%] rounded-xl box-border overflow-hidden border-[1px] border-solid border-dimgray-500"
               type="text"
               style={{ zIndex:999 }}
+              // onChange={(e) => setLoginInfo(...LoginInfo, {email: e.target.value})}
             />
             <div className="absolute top-[104.6%] left-[0%] hidden">
               Error message
@@ -1456,7 +1464,7 @@ const SignUp = ({
                 <div className="absolute top-[0px] right-[0px]">Hide</div>
               </div>
             </article>
-            <input
+            <input // name 
               className="[outline:none] bg-[transparent] absolute h-[64.37%] w-full top-[35.63%] right-[0%] bottom-[0%] left-[0%] rounded-xl box-border overflow-hidden border-[1px] border-solid border-dimgray-500"
               type="text"
               style={{ zIndex:999 }}
@@ -1499,7 +1507,7 @@ const SignUp = ({
                 </div>
               )}
             </article>
-            <input
+            <input // password
               className="[outline:none] bg-[transparent] absolute h-[64.37%] w-full top-[35.63%] right-[0%] bottom-[0%] left-[0%] rounded-xl box-border overflow-hidden border-[1px] border-solid border-dimgray-500"
               type="text"
               style={{ ...textFieldStyle,zIndex:999 }}
