@@ -1695,7 +1695,7 @@ const SignUp = ({
           style={alreadyHaveAnContainerStyle}
         >
           <span className="text-darkslategray-300">
-            Already have an ccount?
+            Already have an account?
           </span>
           <span className="text-dimgray-200">{` `}</span>
           <span className="[text-decoration:underline] text-gray-200 whitespace-pre-wrap">{`Log in  `}</span>

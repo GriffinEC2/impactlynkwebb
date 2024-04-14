@@ -382,6 +382,7 @@ const SignUpScreen = () => {
           passwordHideSee11={false}
           showHide11
           errorMessage111={false}
+          signUp1="Signup with Google"
         />
         <div className="w-[424px] rounded-xl [filter:drop-shadow(0px_0px_10px_rgba(0,_0,_0,_0.45))] [backdrop-filter:blur(20px)] flex flex-col items-center justify-center">
           <HeadingTextBackgroundLo
