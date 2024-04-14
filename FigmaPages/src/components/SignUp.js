@@ -1356,7 +1356,6 @@ const SignUp = ({
 
   const {
     loginInfo, 
-    loginInfo: {userEmail, userPassword, userUsername}, 
     setLoginInfo,
   } = useContext(UserContext)
 
@@ -1468,6 +1467,7 @@ const SignUp = ({
               className="[outline:none] bg-[transparent] absolute h-[64.37%] w-full top-[35.63%] right-[0%] bottom-[0%] left-[0%] rounded-xl box-border overflow-hidden border-[1px] border-solid border-dimgray-500"
               type="text"
               style={{ zIndex:999 }}
+              onChange={(e) => setLoginInfo({...loginInfo,username: e.target.value})}
             />
             <div className="absolute top-[104.6%] left-[0%] hidden">
               Error message
@@ -1511,6 +1511,7 @@ const SignUp = ({
               className="[outline:none] bg-[transparent] absolute h-[64.37%] w-full top-[35.63%] right-[0%] bottom-[0%] left-[0%] rounded-xl box-border overflow-hidden border-[1px] border-solid border-dimgray-500"
               type="text"
               style={{ ...textFieldStyle,zIndex:999 }}
+              onChange={(e) => setLoginInfo({...loginInfo,password: e.target.value})}
             />
             <div
               className="absolute top-[104.6%] left-[0%] hidden"

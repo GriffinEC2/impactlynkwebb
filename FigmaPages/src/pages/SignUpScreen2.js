@@ -4,17 +4,49 @@ import SignUp from "../components/SignUp";
 import HeadingTextBackgroundLo from "../components/HeadingTextBackgroundLo";
 import { addUserDetails } from "../lib/users";
 import UserContext from "../context/userContext"
+import Login from "../components/Login2";
 
 
 const SignUpScreen2 = () => {
   const navigate = useNavigate();
 
+
+  const [error1, setError] = useState(null);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSignUp = useCallback((e) => {
+    e.preventDefault();
+
+    const auth = getAuth();
+    if (password !== "google") {
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          const user = userCredential.user;
+          console.log(user);
+          const userUID = userCredential.uid;
+          setError("0");
+        })
+        .catch((error) => {
+          const errorMessage = error.message;
+          setError(errorMessage);
+        });
+    } else {
+      userUID = LoginInfo.userUid
+    }
+    return { userUID }
+  });
+
   const onButtonClick = useCallback(() => {
     const {
       LoginInfo,
-    } = useContext(UserContext)
+    } = useContext(UserContext);
 
-    addUserDetails(LoginInfo) // TODO: spread? and don't include email + pswd. Add uid
+    setEmail(LoginInfo.setEmail)
+    setPassword(LoginInfo.setPassword)
+    userUID = handleSignUp()
+
+    addUserDetails(...LoginInfo);
 
     navigate("/post-home-page");
   }, [navigate]);

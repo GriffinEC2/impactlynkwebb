@@ -1,4 +1,4 @@
-import { useCallback, useState, useEffect } from "react";
+import { useCallback, useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import SignUp from "../components/SignUp";
 import HeadingTextBackgroundLo from "../components/HeadingTextBackgroundLo";
@@ -11,6 +11,7 @@ import {
 } from "firebase/auth";
 
 import app from "../lib/firebase";
+import UserContext from "../context/userContext"
 
 const SignUpScreen = () => {
   const navigate = useNavigate();
@@ -34,7 +35,21 @@ const SignUpScreen = () => {
         // ...
         setError("0");
 
-        console.log(user, token, credential);
+
+        const {
+          loginInfo,
+          setLoginInfo,
+        } = useContext(UserContext)
+
+        setLoginInfo({
+          ...loginInfo, userEmail: user.email, userPassword: "google",
+          userUsername: user.displayName, userUid: user.uid
+        })
+
+        console.log("user", user);
+        console.log("userUID", user.uid)
+        console.log("token", token);
+        console.log("credential", credential);
       })
       .catch((error) => {
         // Handle Errors here.
@@ -60,27 +75,6 @@ const SignUpScreen = () => {
     }
     console.log("error1:", error1)
   }, [error1]);
-
-  
-
-  const handleSignUp = useCallback((e) => {
-    e.preventDefault();
-
-    const auth = getAuth();
-
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        console.log(user);
-        setError("0");
-      })
-      .catch((error) => {
-        const errorMessage = error.message;
-        setError(errorMessage);
-      });
-  })
-
-
 
   const onHaveAnAccountLoginClick = useCallback(() => {
     // navigate("/login-screen");

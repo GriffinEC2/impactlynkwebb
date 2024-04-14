@@ -13,6 +13,8 @@ import {
   
   export const addUserDetails = async (
     userID,
+    email, 
+    password, 
     username,
     school_organization,
     phone_number,

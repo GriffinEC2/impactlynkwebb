@@ -2,13 +2,14 @@ import { createContext } from "react";
 
 const UserContext = createContext({
     LoginInfo: {
-        email: "",
-        password: "",
-        username: "",
-        school_organization: "",
-        phone_number: "",
-        grade: "",
-        organizer_or_volunteer: null
+        userUid: "",
+        userEmail: "",
+        userPassword: "",
+        userUsername: "",
+        userSchool_organization: "",
+        userPhone_number: "",
+        userGrade: "",
+        userOrganizer_or_volunteer: null
     },
     setLoginInfo: () => {}
 });
