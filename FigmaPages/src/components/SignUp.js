@@ -1355,8 +1355,8 @@ const SignUp = ({
   ]);
 
   const {
-    LoginInfo, 
-    LoginInfo: {userEmail, userPassword, userUsername}, 
+    loginInfo, 
+    loginInfo: {userEmail, userPassword, userUsername}, 
     setLoginInfo,
   } = useContext(UserContext)
 
@@ -1443,7 +1443,7 @@ const SignUp = ({
               className="[outline:none] bg-[transparent] absolute h-[64.37%] w-full top-[35.63%] right-[0%] bottom-[0%] left-[0%] rounded-xl box-border overflow-hidden border-[1px] border-solid border-dimgray-500"
               type="text"
               style={{ zIndex:999 }}
-              // onChange={(e) => setLoginInfo(...LoginInfo, {email: e.target.value})}
+              onChange={(e) => setLoginInfo({...loginInfo,email: e.target.value})}
             />
             <div className="absolute top-[104.6%] left-[0%] hidden">
               Error message
@@ -1614,7 +1614,7 @@ const SignUp = ({
             >
               {!icons1 && (
                 <img
-                  className="w-6 relative h-6 overflow-hidden shrink-0 hidden"
+                  className="relative hidden w-6 h-6 overflow-hidden shrink-0"
                   alt=""
                   src="/icons.svg"
                   style={iconsStyle}
@@ -1622,7 +1622,7 @@ const SignUp = ({
                 />
               )}
               <div
-                className="relative text-3xl font-medium font-poppins text-dimgray-200 text-center"
+                className="relative text-3xl font-medium text-center font-poppins text-dimgray-200"
                 style={signUp1Style}
               >
                 {signUp}
@@ -1679,14 +1679,14 @@ const SignUp = ({
             >
               {!icons2 && (
                 <img
-                  className="w-6 relative h-6 overflow-hidden shrink-0 hidden"
+                  className="relative hidden w-6 h-6 overflow-hidden shrink-0"
                   alt=""
                   src="/icons.svg"
                   style={icons1Style}
                 />
               )}
               <div
-                className="relative text-3xl font-medium font-poppins text-white text-center"
+                className="relative text-3xl font-medium text-center text-white font-poppins"
                 style={signUp2Style}
               >
                 {signUp1}
@@ -1701,7 +1701,7 @@ const SignUp = ({
         onClick={onButtonClick1}
       >
         <div
-          className="relative text-base font-poppins text-left"
+          className="relative text-base text-left font-poppins"
           style={alreadyHaveAnContainerStyle}
         >
           <span className="text-darkslategray-300">

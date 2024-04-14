@@ -1,20 +1,16 @@
-import { createContext, useState } from "react";
-
-const [email, setEmail] = useState("");
-const [password, setPassword] = useState("");
-const [username, setUsername] = useState("");
+import { createContext } from "react";
 
 const UserContext = createContext({
     LoginInfo: {
         email: "",
         password: "",
-        username: "", 
-        school_organization: "", 
-        phone_number: "", 
-        grade: "", 
-        organizer_or_volunteer: null,
+        username: "",
+        school_organization: "",
+        phone_number: "",
+        grade: "",
+        organizer_or_volunteer: null
     },
-    setLoginInfo: () => {},
+    setLoginInfo: () => {}
 });
 
 export default UserContext;
