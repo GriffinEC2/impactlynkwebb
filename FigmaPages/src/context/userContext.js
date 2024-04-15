@@ -6,8 +6,8 @@ const UserContext = createContext({
         userEmail: "",
         userPassword: "",
         userUsername: "",
-        userSchool_organization: "",
-        userPhone_number: "",
+        userSchoolOrganization: "",
+        userPhoneNumber: "",
         userGrade: "",
         userOrganizer_or_volunteer: null
     },

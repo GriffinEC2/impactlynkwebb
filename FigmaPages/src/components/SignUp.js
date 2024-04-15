@@ -2,6 +2,7 @@ import { useMemo, useContext } from "react";
 import UserContext from "../context/userContext"
 
 const SignUp = ({
+  whatPage,
   welcomeToImpactApp,
   user1,
   user2,
@@ -1355,7 +1356,7 @@ const SignUp = ({
   ]);
 
   const {
-    loginInfo, 
+    loginInfo,
     setLoginInfo,
   } = useContext(UserContext)
 
@@ -1438,12 +1439,22 @@ const SignUp = ({
                 <div className="absolute top-[0px] right-[0px]">Hide</div>
               </div>
             </article>
-            <input // email
-              className="[outline:none] bg-[transparent] absolute h-[64.37%] w-full top-[35.63%] right-[0%] bottom-[0%] left-[0%] rounded-xl box-border overflow-hidden border-[1px] border-solid border-dimgray-500"
-              type="text"
-              style={{ zIndex:999 }}
-              onChange={(e) => setLoginInfo({...loginInfo,email: e.target.value})}
-            />
+            {whatPage === 0 ? (
+              <input // email
+                className="[outline:none] bg-[transparent] absolute h-[64.37%] w-full top-[35.63%] right-[0%] bottom-[0%] left-[0%] rounded-xl box-border overflow-hidden border-[1px] border-solid border-dimgray-500"
+                type="text"
+                style={{ zIndex: 999 }}
+                onChange={(e) => setLoginInfo({ ...loginInfo, userEmail: e.target.value })}
+              />
+            ) : (
+              <input // school/org
+                className="[outline:none] bg-[transparent] absolute h-[64.37%] w-full top-[35.63%] right-[0%] bottom-[0%] left-[0%] rounded-xl box-border overflow-hidden border-[1px] border-solid border-dimgray-500"
+                type="text"
+                style={{ zIndex: 999 }}
+                onChange={(e) => setLoginInfo({ ...loginInfo, userSchoolOrganization: e.target.value })}
+              />
+            )
+            }
             <div className="absolute top-[104.6%] left-[0%] hidden">
               Error message
             </div>
@@ -1463,12 +1474,23 @@ const SignUp = ({
                 <div className="absolute top-[0px] right-[0px]">Hide</div>
               </div>
             </article>
-            <input // name 
-              className="[outline:none] bg-[transparent] absolute h-[64.37%] w-full top-[35.63%] right-[0%] bottom-[0%] left-[0%] rounded-xl box-border overflow-hidden border-[1px] border-solid border-dimgray-500"
-              type="text"
-              style={{ zIndex:999 }}
-              onChange={(e) => setLoginInfo({...loginInfo,username: e.target.value})}
-            />
+            {whatPage === 0 ? (
+              <input // name 
+                className="[outline:none] bg-[transparent] absolute h-[64.37%] w-full top-[35.63%] right-[0%] bottom-[0%] left-[0%] rounded-xl box-border overflow-hidden border-[1px] border-solid border-dimgray-500"
+                type="text"
+                style={{ zIndex: 999 }}
+                onChange={(e) => setLoginInfo({ ...loginInfo, username: e.target.value })}
+              />
+            ) : (
+              <input // Phone Number 
+                className="[outline:none] bg-[transparent] absolute h-[64.37%] w-full top-[35.63%] right-[0%] bottom-[0%] left-[0%] rounded-xl box-border overflow-hidden border-[1px] border-solid border-dimgray-500"
+                type="text"
+                style={{ zIndex: 999 }}
+                onChange={(e) => setLoginInfo({ ...loginInfo, userPhoneNumber: e.target.value })}
+              />
+
+            )
+            }
             <div className="absolute top-[104.6%] left-[0%] hidden">
               Error message
             </div>
@@ -1508,12 +1530,22 @@ const SignUp = ({
                 </div>
               )}
             </article>
-            <input // password
-              className="[outline:none] bg-[transparent] absolute h-[64.37%] w-full top-[35.63%] right-[0%] bottom-[0%] left-[0%] rounded-xl box-border overflow-hidden border-[1px] border-solid border-dimgray-500"
-              type="text"
-              style={{ ...textFieldStyle,zIndex:999 }}
-              onChange={(e) => setLoginInfo({...loginInfo,password: e.target.value})}
-            />
+            {whatPage === 0 ? (
+              <input // password
+                className="[outline:none] bg-[transparent] absolute h-[64.37%] w-full top-[35.63%] right-[0%] bottom-[0%] left-[0%] rounded-xl box-border overflow-hidden border-[1px] border-solid border-dimgray-500"
+                type="text"
+                style={{ ...textFieldStyle, zIndex: 999 }}
+                onChange={(e) => setLoginInfo({ ...loginInfo, password: e.target.value })}
+              />
+            ) : (
+              <input // Grade
+                className="[outline:none] bg-[transparent] absolute h-[64.37%] w-full top-[35.63%] right-[0%] bottom-[0%] left-[0%] rounded-xl box-border overflow-hidden border-[1px] border-solid border-dimgray-500"
+                type="text"
+                style={{ ...textFieldStyle, zIndex: 999 }}
+                onChange={(e) => setLoginInfo({ ...loginInfo, userGrade: e.target.value })}
+              />
+            )
+            }
             <div
               className="absolute top-[104.6%] left-[0%] hidden"
               style={errorMessageStyle}
@@ -1661,7 +1693,7 @@ const SignUp = ({
         className="m-0 w-[494px] relative text-inherit font-medium font-inherit text-center flex items-center justify-center"
         style={orStyle}
       >
-        {or} 
+        {or}
       </h1>
       <div
         className="w-[515px] overflow-hidden flex flex-col items-center justify-start"
